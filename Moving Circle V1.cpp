@@ -1,4 +1,5 @@
 #include <iostream>
+#include <SFML>
 using namespace std;
 
 int main() {
