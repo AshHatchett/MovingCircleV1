@@ -3,7 +3,7 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(700, 700), "SFML works!");
+	sf::RenderWindow window(sf::VideoMode(700, 700), "Moving Circle V1");
 	sf::CircleShape circle(50.f);
 	circle.setFillColor(sf::Color::Blue);
 	circle.setPointCount(1000);
