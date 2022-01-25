@@ -3,9 +3,11 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	sf::RenderWindow window(sf::VideoMode(700, 700), "SFML works!");
+	sf::CircleShape circle(50.f);
+	circle.setFillColor(sf::Color::Blue);
+	circle.setPointCount(1000);
+	circle.setPosition(300.f, 300.f);
 
 	while (window.isOpen())
 	{
@@ -16,8 +18,31 @@ int main()
 				window.close();
 		}
 
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+		{
+			circle.move(0.f, -1.f);
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		{
+			circle.move(0.f,1.f);
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		{
+			circle.move(-1.f, 0.f);
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		{
+			circle.move(1.f, 0.f);
+		}
+		else
+		{
+			circle.setPosition(300.f, 300.f);
+		}
+		// This is the reset to origin part: to remove change "else if" to "if" and remove "else"
+		
+
 		window.clear();
-		window.draw(shape);
+		window.draw(circle);
 		window.display();
 	}
 
